@@ -1,13 +1,24 @@
 import React from 'react';
-import { useAuth0 } from "@auth0/auth0-react";
 import './App.sass';
 import Landing from './components/Landing/Landing';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import About from './components/About/About';
 
 
 function App() {
   return (
     <div className="App">
-    <Landing/>
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Landing}/>
+          <Route path="/about" exact component={About}/>
+        </Switch>
+      </Router>
+    
     </div>
   );
 }

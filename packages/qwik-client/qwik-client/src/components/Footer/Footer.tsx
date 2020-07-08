@@ -8,7 +8,7 @@ const Footer = () => {
     const navItems = () =>
         [
             <Nav.Item>
-             <Nav.Link href="">Source Code</Nav.Link>
+             <Nav.Link href="https://github.com/ryanKrumbholz/qwik" target="_blank">Source Code</Nav.Link>
             </Nav.Item>
         ]
 

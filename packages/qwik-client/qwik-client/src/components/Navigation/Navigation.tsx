@@ -17,7 +17,7 @@ const Navigation = (props: any) => {
 
     return(
         <Navbar>
-            <Navbar.Brand href="#home">Qwik</Navbar.Brand>
+            <Navbar.Brand href="/">Qwik</Navbar.Brand>
             <Nav className="justify-content-end">
                 {content()}
             </Nav>

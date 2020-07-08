@@ -15,7 +15,7 @@ const Landing = () => {
 
     const getNavContents = {
         contents: [
-                <Nav.Link>About</Nav.Link>,
+                <Nav.Link href="/about">About</Nav.Link>,
                 <Nav.Link href="mailto:krumbholz98@gmail.com" target="_blank">Contact</Nav.Link>,
                 <LoginButton/>
             ]
