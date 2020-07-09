@@ -4,13 +4,10 @@ import './index.css';
 import App from './App.tsx';
 import * as serviceWorker from './serviceWorker';
 import { Auth0Provider } from "@auth0/auth0-react";
+import {auth0Config} from './config';
 
 ReactDOM.render(
-  <Auth0Provider
-    domain="dev-6e9pjn91.us.auth0.com"
-    clientId="Ac8rN6c8CyAhtRVljxiJ4rQiURiUWe9C"
-    redirectUri={window.location.origin}
-  >
+  <Auth0Provider {...auth0Config}>
     <App />
   </Auth0Provider>,
   document.getElementById('root')

@@ -7,18 +7,24 @@ import {
   Route
 } from "react-router-dom";
 import About from './components/About/About';
+import EditorHome from './components/EditorHome/EditorHome';
+import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute';
 
 
-function App() {
+
+
+const App = () => {
+
   return (
     <div className="App">
       <Router>
-        <Switch>
-          <Route path="/" exact component={Landing}/>
-          <Route path="/about" exact component={About}/>
-        </Switch>
-      </Router>
-    
+              <Switch>
+                <Route path="/" exact component={Landing}/>
+                <Route path="/about" exact component={About}/>
+                <AuthenticatedRoute path="/home" component={EditorHome}/>
+                {/* <AuthenticatedRoute path="/home" component={EditorHome}/> */}
+              </Switch>
+          </Router>
     </div>
   );
 }
