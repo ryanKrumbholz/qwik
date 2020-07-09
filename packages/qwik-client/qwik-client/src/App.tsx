@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.sass';
 import Landing from './components/Landing/Landing';
 import {
@@ -13,13 +13,19 @@ import CreatePost from './components/CreatePost/CreatePost';
 import EditPost from './components/EditPost/EditPost';
 import UpdatePost from './components/UpdatePost/UpdatePost';
 import Posts from './components/Posts/Posts';
+import CreateBlog from './components/CreateBlog/CreateBlog'
 
 
 
 
-const App = () => {
+class App extends Component {
 
-  return (
+  state = {
+    blogID: 'null'
+  };
+
+  render () {
+    return (
     <div className="App">
       <Router>
               <Switch>
@@ -27,13 +33,15 @@ const App = () => {
                 <Route path="/about" exact component={About}/>
                 <AuthenticatedRoute path="/home" component={EditorHome}/>
                 <AuthenticatedRoute path="/create" component={CreatePost}/>
-                <AuthenticatedRoute path="/edit" component={EditPost}/>
+                <AuthenticatedRoute path="/new" component={CreateBlog}/>
+                <AuthenticatedRoute path="/edit" component={EditPost} rest={this.state.blogID}/>
                 <AuthenticatedRoute path="/update" component={UpdatePost}/>
                 <AuthenticatedRoute path="/posts" component={Posts}/>
               </Switch>
           </Router>
     </div>
-  );
+    )
+  };
 }
 
 export default App;
